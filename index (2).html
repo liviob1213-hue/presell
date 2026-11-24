@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Life Path Number Calculator – Find Your Number and What It Means</title>
+<meta name="description" content="Free Life Path Number calculator. Enter your birth date, see your number, how it is calculated, and what numerology traditionally says about it.">
+<style>
+  :root{
+    --ink:#1d1b2e; --muted:#5d5a72; --bg:#fbfaf7; --card:#ffffff;
+    --brand:#3b2f7a; --brand-soft:#efecfa; --gold:#b8862b; --line:#e6e2ef;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       color:var(--ink);background:var(--bg);line-height:1.6;font-size:17px}
+  a{color:var(--brand)}
+  .wrap{max-width:760px;margin:0 auto;padding:0 18px}
+  .disclosure{background:#f3f1e9;border-bottom:1px solid var(--line);font-size:13px;color:var(--muted)}
+  .disclosure .wrap{padding:8px 18px}
+  header.site{padding:14px 0;border-bottom:1px solid var(--line);background:var(--card)}
+  header.site .wrap{display:flex;align-items:center;justify-content:space-between}
+  .logo{font-family:Georgia,"Times New Roman",serif;font-weight:700;font-size:20px;color:var(--brand);text-decoration:none}
+  h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.25;color:var(--ink)}
+  h1{font-size:32px;margin:28px 0 8px}
+  h2{font-size:25px;margin:40px 0 12px}
+  h3{font-size:19px;margin:22px 0 6px}
+  .lead{color:var(--muted);font-size:18px;margin:0 0 18px}
+  /* Espaço reservado para o chat do FluxChat (a calculadora). */
+  .chat-slot{background:var(--card);border:1px solid var(--line);border-radius:14px;
+             box-shadow:0 2px 14px rgba(59,47,122,.07);min-height:460px;margin:8px 0 10px;overflow:hidden}
+  .note{font-size:13px;color:var(--muted)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:14px 0}
+  .formula{background:var(--brand-soft);border-radius:10px;padding:14px 16px;font-size:16px}
+  .formula code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:15px}
+  ol li,ul li{margin:6px 0}
+  .grid{display:grid;grid-template-columns:1fr;gap:12px}
+  @media(min-width:640px){.grid{grid-template-columns:1fr 1fr}}
+  .num{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .num h3{margin:0 0 4px;font-size:18px}
+  .num .badge{display:inline-block;min-width:30px;text-align:center;background:var(--brand);color:#fff;
+              border-radius:8px;padding:1px 8px;margin-right:6px;font-family:-apple-system,Segoe UI,Arial,sans-serif;font-size:15px}
+  .num.master .badge{background:var(--gold)}
+  .num p{margin:4px 0 0;color:var(--muted);font-size:15.5px}
+  .offer{background:linear-gradient(180deg,#f6f3ff,#fff);border:1px solid #d9d2f3;border-radius:14px;padding:22px}
+  .offer ul{padding-left:20px}
+  .btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;font-weight:600;
+       padding:14px 22px;border-radius:10px;font-size:17px;margin-top:6px}
+  .btn:hover{background:#2e2463}
+  details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin:10px 0}
+  summary{font-weight:600;cursor:pointer}
+  details p{margin:10px 0 2px;color:var(--muted)}
+  footer{margin-top:48px;padding:24px 0 40px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+  footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+
+<div class="disclosure" data-section="disclosure">
+  <div class="wrap">
+    <strong>Disclosure:</strong> This page contains affiliate links. If you buy something through them, we may earn a commission at no extra cost to you. Numerology is presented here for self-reflection and entertainment.
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="#">[YOUR SITE NAME]</a>
+    <span class="note">Free numerology tools</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- TOPO + CALCULADORA (chat) -->
+  <section data-section="topo">
+    <h1>Life Path Number Calculator</h1>
+    <p class="lead">Enter your birth date in the chat below to find your Life Path Number, see exactly how it is calculated, and read what numerology traditionally says about it. Free, no sign-up needed.</p>
+
+    <!-- FluxChat: o chat da calculadora entra aqui -->
+    <div class="chat-slot" data-fluxchat></div>
+    <p class="note">Your birth date is only used to calculate your number. Email is optional.</p>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section data-section="como-funciona">
+    <h2>How your Life Path Number is calculated</h2>
+    <p>In numerology, the Life Path Number comes from your full date of birth. It is the most commonly used number in a numerology chart, because your birth date never changes.</p>
+    <ol>
+      <li><strong>Reduce the month</strong> to a single digit.</li>
+      <li><strong>Reduce the day</strong> to a single digit.</li>
+      <li><strong>Reduce the year</strong> by adding its digits until you get a single digit.</li>
+      <li><strong>Add the three results</strong> and reduce again until you reach a single digit.</li>
+    </ol>
+    <p>If a step lands on <strong>11, 22 or 33</strong>, many numerologists keep it as it is. These are called <em>master numbers</em>.</p>
+    <div class="formula">
+      <strong>Example: March 14, 1985</strong><br>
+      Month: <code>3</code> → 3<br>
+      Day: <code>14</code> → 1 + 4 = 5<br>
+      Year: <code>1985</code> → 1 + 9 + 8 + 5 = 23 → 2 + 3 = 5<br>
+      Total: <code>3 + 5 + 5 = 13</code> → 1 + 3 = <strong>Life Path 4</strong>
+    </div>
+    <p class="note">Different numerology schools reduce the date in slightly different ways, so two calculators can occasionally disagree, especially around master numbers. This calculator uses the month–day–year method shown above.</p>
+  </section>
+
+  <!-- SIGNIFICADOS -->
+  <section data-section="significados">
+    <h2>What each Life Path Number means</h2>
+    <p>These are the themes numerology traditionally associates with each number. Read them as prompts for reflection, not predictions.</p>
+
+    <div class="grid">
+      <div class="num" id="life-path-1"><h3><span class="badge">1</span>The Initiator</h3>
+        <p>Independent and driven, with a natural pull toward starting things and leading. The growth edge is learning to accept help and share the spotlight.</p></div>
+      <div class="num" id="life-path-2"><h3><span class="badge">2</span>The Peacemaker</h3>
+        <p>Sensitive to people and atmosphere, good at cooperation and seeing both sides. The growth edge is speaking up for your own needs.</p></div>
+      <div class="num" id="life-path-3"><h3><span class="badge">3</span>The Communicator</h3>
+        <p>Expressive, social and creative, often drawn to words, art or performance. The growth edge is focus and finishing what you start.</p></div>
+      <div class="num" id="life-path-4"><h3><span class="badge">4</span>The Builder</h3>
+        <p>Practical, loyal and steady, happiest with a plan and a solid foundation. The growth edge is flexibility when plans change.</p></div>
+      <div class="num" id="life-path-5"><h3><span class="badge">5</span>The Explorer</h3>
+        <p>Curious and freedom-loving, energized by change, travel and new experiences. The growth edge is commitment and consistency.</p></div>
+      <div class="num" id="life-path-6"><h3><span class="badge">6</span>The Nurturer</h3>
+        <p>Caring and responsible, often the one others lean on at home or work. The growth edge is caring for yourself as well as others.</p></div>
+      <div class="num" id="life-path-7"><h3><span class="badge">7</span>The Seeker</h3>
+        <p>Thoughtful and introspective, drawn to questions, research and inner life. The growth edge is trusting others and staying connected.</p></div>
+      <div class="num" id="life-path-8"><h3><span class="badge">8</span>The Achiever</h3>
+        <p>Ambitious and capable, with a strong sense for goals, money and structure. The growth edge is balancing achievement with rest and relationships.</p></div>
+      <div class="num" id="life-path-9"><h3><span class="badge">9</span>The Humanitarian</h3>
+        <p>Compassionate and idealistic, with a wide view of the world and other people. The growth edge is letting go of the past and setting limits.</p></div>
+      <div class="num master" id="life-path-11"><h3><span class="badge">11</span>The Intuitive</h3>
+        <p>A master number linked to intuition, sensitivity and inspiring others. It is often described as intense, with a growth edge around managing nervous energy.</p></div>
+      <div class="num master" id="life-path-22"><h3><span class="badge">22</span>The Master Builder</h3>
+        <p>A master number linked to turning big visions into something real and lasting. The growth edge is handling the pressure of high expectations.</p></div>
+      <div class="num master" id="life-path-33"><h3><span class="badge">33</span>The Master Teacher</h3>
+        <p>A rare master number associated with service, compassion and guiding others. The growth edge is not carrying everyone else's weight.</p></div>
+    </div>
+  </section>
+
+  <!-- OFERTA -->
+  <section data-section="oferta">
+    <h2>Your Life Path is one number. A full chart has more.</h2>
+    <div class="offer">
+      <p>A complete numerology chart also looks at numbers calculated from your <strong>name</strong>, not only your birth date. If you want to go deeper than this calculator, Numerologist.com offers a <strong>free personalized video reading</strong>:</p>
+      <ul>
+        <li>You enter only your first name and date of birth.</li>
+        <li>In about 7 minutes, it looks at why you're here, what comes naturally to you and what you really want.</li>
+        <li>The video is free. Numerologist.com also sells optional paid reports, which you can skip.</li>
+      </ul>
+      <!-- Link de afiliado: obruxo1213 -->
+      <a class="btn" data-offer="numerology" href="https://hop.clickbank.net/?affiliate=obruxo1213&vendor=numerology&tid=page-offer" target="_blank" rel="sponsored noopener">Watch my free video reading →</a>
+      <p class="note">Opens Numerologist.com in a new tab. We earn a commission if you choose to buy a paid report.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section data-section="faq">
+    <h2>Frequently asked questions</h2>
+    <details><summary>What is a Life Path Number?</summary>
+      <p>It is a single number (1–9, or the master numbers 11, 22 and 33) calculated from your date of birth. In numerology it is treated as the main theme of your chart.</p></details>
+    <details><summary>Is this calculator free?</summary>
+      <p>Yes. You can find your number and read its meaning without paying or signing up.</p></details>
+    <details><summary>Why did another calculator give me a different number?</summary>
+      <p>Some calculators add all the digits of the date at once, while others reduce the month, day and year separately. The difference usually shows up with master numbers. This page uses the month–day–year method.</p></details>
+    <details><summary>What are master numbers?</summary>
+      <p>11, 22 and 33 are called master numbers. Many numerologists do not reduce them further and describe them as more intense versions of 2, 4 and 6.</p></details>
+    <details><summary>Can numerology predict my future?</summary>
+      <p>No. Numerology is a tradition people use for self-reflection and fun. It is not science, and it should not replace professional advice on health, money or relationships.</p></details>
+    <details><summary>What do you do with my email?</summary>
+      <p>Only if you choose to share it: we send the guide you asked for and occasional numerology content and offers. Every email has an unsubscribe link. See our privacy policy.</p></details>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Numerology content on this site is for entertainment and self-reflection only. It is not scientific and is not a substitute for medical, legal, financial or psychological advice.</p>
+    <p>This site is not affiliated with or endorsed by Numerologist.com. Links to Numerologist.com are affiliate links.</p>
+    <p><a href="#PRIVACY">Privacy Policy</a> · <a href="#TERMS">Terms</a> · <a href="#CONTACT">Contact</a></p>
+    <p>© 2026 [YOUR SITE NAME] · [BUSINESS ADDRESS]</p>
+  </div>
+</footer>
+
+</body>
+</html>
