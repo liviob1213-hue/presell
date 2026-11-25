@@ -12,6 +12,8 @@
   }
   *{box-sizing:border-box}
   html,body{margin:0}
+  html{scroll-behavior:smooth}
+  #chat{scroll-margin-top:16px}
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
        color:var(--ink);background:var(--bg);line-height:1.6;font-size:17px}
   a{color:var(--brand)}
@@ -64,7 +66,7 @@
 
 <header class="site">
   <div class="wrap">
-    <a class="logo" href="#">[YOUR SITE NAME]</a>
+    <a class="logo" href="/">Inner Path Daily</a>
     <span class="note">Free numerology tools</span>
   </div>
 </header>
@@ -77,9 +79,9 @@
     <p class="lead">Enter your birth date in the chat below to find your Life Path Number, see exactly how it is calculated, and read what numerology traditionally says about it. Free, no sign-up needed.</p>
 
     <!-- FluxChat: o chat da calculadora entra aqui -->
-    <div class="chat-slot" data-fluxchat="life-path-calculator-us"></div>
+    <div class="chat-slot" id="chat" data-fluxchat="life-path-calculator-us"></div>
     <script src="https://fluxchat-kohl.vercel.app/embed.js" async></script>
-    <p class="note">Your birth date is only used to calculate your number. Email is optional.</p>
+    <p class="note">Your birth date is used to calculate your number. If you choose to get the guide by email, we save it with your email to personalize it. Email is optional.</p>
   </section>
 
   <!-- COMO FUNCIONA -->
@@ -146,9 +148,9 @@
         <li>In about 7 minutes, it looks at why you're here, what comes naturally to you and what you really want.</li>
         <li>The video is free. Numerologist.com also sells optional paid reports, which you can skip.</li>
       </ul>
-      <!-- Link de afiliado: obruxo1213 -->
-      <a class="btn" data-offer="numerology" href="https://hop.clickbank.net/?affiliate=obruxo1213&vendor=numerology&tid=page-offer" target="_blank" rel="sponsored noopener">Watch my free video reading →</a>
-      <p class="note">Opens Numerologist.com in a new tab. We earn a commission if you choose to buy a paid report.</p>
+      <!-- O botão rola até o chat: o link de afiliado sai só de dentro do chat, com rastreio. -->
+      <a class="btn" data-offer="numerology" href="#chat">Get my free video reading in the chat ↑</a>
+      <p class="note">Find your number in the chat above, then choose the free video reading there. Affiliate link: we earn a commission if you choose to buy a paid report.</p>
     </div>
   </section>
 
@@ -166,7 +168,7 @@
     <details><summary>Can numerology predict my future?</summary>
       <p>No. Numerology is a tradition people use for self-reflection and fun. It is not science, and it should not replace professional advice on health, money or relationships.</p></details>
     <details><summary>What do you do with my email?</summary>
-      <p>Only if you choose to share it: we send the guide you asked for and occasional numerology content and offers. Every email has an unsubscribe link. See our privacy policy.</p></details>
+      <p>Only if you choose to share it: we send the guide you asked for and occasional numerology content and offers. Every email has an unsubscribe link. See our <a href="/privacy">privacy policy</a>.</p></details>
   </section>
 
 </main>
@@ -175,8 +177,8 @@
   <div class="wrap">
     <p>Numerology content on this site is for entertainment and self-reflection only. It is not scientific and is not a substitute for medical, legal, financial or psychological advice.</p>
     <p>This site is not affiliated with or endorsed by Numerologist.com. Links to Numerologist.com are affiliate links.</p>
-    <p><a href="#PRIVACY">Privacy Policy</a> · <a href="#TERMS">Terms</a> · <a href="#CONTACT">Contact</a></p>
-    <p>© 2026 [YOUR SITE NAME] · [BUSINESS ADDRESS]</p>
+    <p><a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms of Use</a> · <a href="/contact">Contact</a></p>
+    <p>© 2026 Inner Path Daily · 8781 Pleasant Ct, Suite I742, San Marino, CA 91108, United States · <a href="mailto:support@innerpathdaily.com">support@innerpathdaily.com</a></p>
   </div>
 </footer>
 
